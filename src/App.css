@@ -48,22 +48,36 @@ main {
   margin-top: 20px;
   display: grid;
   justify-items: center;
-  row-gap: 20px;
+  gap: 20px;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr 1fr;
-  width: 100%;
+
 }
 
 .die {
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 600;
   line-height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 35px;
-  height: 35px;
-  background-color: #ffffff;
-  box-shadow: 0px 2px 3px 0px rgb(100, 100, 100);
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.roll {
+  margin-top: 20px;
+  width: 100px;
+  height: 40px;
+  background-color: #5035FF;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 0px 3px 7px 0px #00000070;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
 }
