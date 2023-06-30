@@ -1,11 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Dice from "./dice";
 import { nanoid } from "nanoid";
 
 function App() {
   const [dice, setDice] = useState(randomDiceArr());
+  const [tenzies, setTenzies] = useState(false);
 
+  useEffect(() => {
+    let diceValues = dice.map((item) => item.value);
+    const allEqual = (dice) => dice.every((v) => v === dice[0]);
+
+    if (allEqual(diceValues)) {
+      setTenzies(true);
+      console.log("You win!");
+    }
+  }, [dice]);
+  console.log(tenzies);
   function randomDiceArr() {
     const newDice = [];
 
@@ -32,7 +43,7 @@ function App() {
     });
   }
 
-  function holdDice(event, diceId) {
+  function holdDice(diceId) {
     setDice((prevDice) => {
       return prevDice.map((element) => {
         if (element.id === diceId) {
